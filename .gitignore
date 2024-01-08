@@ -1,0 +1,16 @@
+.DS_Store
+\.idea
+firebase-debug.log
+
+# Compiled JavaScript files
+lib/**/*.js
+lib/**/*.js.map
+
+# TypeScript v1 declaration files
+typings/
+
+# Node.js dependency directory
+node_modules/
+
+# Ignore cloud access key
+DineSmart-a5a9a082d13d.json
