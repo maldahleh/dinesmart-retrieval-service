@@ -4,7 +4,6 @@ The DineSmart Retrieval Service is responsible for exposing an underlying Cloud
 Firestore database that contains inspection data.
 
 ## Technologies
-- Firebase Hosting
+- Heroku
 - Cloud Firestore
-- Node.js
-- TypeScript
+- Node.js (with TypeScript)
