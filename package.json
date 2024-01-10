@@ -1,5 +1,6 @@
 {
   "name": "dinesmart-retrieval-service",
+  "repository": "https://github.com/maldahleh/dinesmart-retrieval-service",
   "main": "dist/app.js",
   "scripts": {
     "start": "tsc && node dist/app.js",

@@ -1,10 +1,19 @@
 import express from 'express';
 
-const app = express();
-const port = 3000;
+const test = {
+    test: 'Hello world'
+}
 
-app.get('/', (req, res) => {
-    res.send('Hello World!');
-});
+const port = process.env.PORT || 3000;
+const server = express()
+    .get(
+        "/inspections",
+        (_req, res) => res.json(test)
+    )
+    .listen(
+        port,
+        () => console.log(`Express listening at http://localhost:${port}`)
+    );
 
-app.listen(port, () => console.log(`Express is listening at http://localhost:${port}`));
+server.keepAliveTimeout = 120 * 1000;
+server.headersTimeout = 120 * 1000;
