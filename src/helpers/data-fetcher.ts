@@ -14,19 +14,15 @@ initializeApp({
 });
 
 const db = getFirestore();
-let inspectionData = JSON.stringify([]);
+let inspectionData = [];
 
 const loadData = async () => {
   await db
       .collection(FIRESTORE_COLLECTION)
       .get()
-      .then((querySnapshot) => {
-        const fetchedDocuments = querySnapshot.docs
-            .map((doc) => doc.data());
-        inspectionData = JSON.stringify(fetchedDocuments);
-      });
+      .then((querySnapshot) => inspectionData = querySnapshot.docs
+          .map((doc) => doc.data()));
 
-  console.log(inspectionData);
   setTimeout(loadData, ONE_DAY_IN_MS);
 };
 
