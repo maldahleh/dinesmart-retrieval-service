@@ -2,6 +2,9 @@ import {initializeApp} from 'firebase-admin/app';
 import {credential} from "firebase-admin";
 import {getFirestore} from 'firebase-admin/firestore';
 
+const FIRESTORE_COLLECTION = "inspections";
+const ONE_DAY_IN_MS = 24 * 60 * 60 * 1000;
+
 initializeApp({
     credential: credential.cert({
         projectId: process.env.FIREBASE_PROJECT_ID,
@@ -13,19 +16,16 @@ initializeApp({
 const db = getFirestore();
 let inspectionData = JSON.stringify([]);
 
-const boot = () => {
-    loadData();
-    setInterval(loadData, 86400 * 1000);
-};
-
 const loadData = async () => {
     await db
-        .collection('inspections')
+        .collection(FIRESTORE_COLLECTION)
         .get()
         .then((querySnapshot) => inspectionData = JSON.stringify(querySnapshot.docs.map(doc => doc.data())));
+
     console.log(inspectionData)
+    setTimeout(loadData, ONE_DAY_IN_MS)
 };
 
 const getData = () => inspectionData;
 
-export { boot, getData };
+export { loadData, getData };
