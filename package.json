@@ -5,7 +5,7 @@
   "scripts": {
     "build": "tsc",
     "start": "npm run build && node dist/app.js",
-    "lint": "eslint . --ext .ts"
+    "lint": "eslint --ext .js,.ts ."
   },
   "engines": {
     "node": "20"
@@ -20,6 +20,8 @@
     "@typescript-eslint/eslint-plugin": "^6.18.1",
     "@typescript-eslint/parser": "^6.18.1",
     "eslint": "^8.56.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-import": "^2.29.1",
     "typescript": "^5.3.3"
   },
   "private": true

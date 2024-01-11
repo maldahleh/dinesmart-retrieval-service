@@ -1,33 +1,34 @@
 module.exports = {
-    "env": {
-        "es2021": true,
-        "node": true
+    root: true,
+    env: {
+        es2021: true,
+        node: true,
     },
-    "extends": [
+    extends: [
         "eslint:recommended",
-        "plugin:@typescript-eslint/recommended"
+        "plugin:import/errors",
+        "plugin:import/warnings",
+        "plugin:import/typescript",
+        "google",
+        "plugin:@typescript-eslint/eslint-recommended",
+        "plugin:@typescript-eslint/recommended",
     ],
-    "overrides": [
-        {
-            "env": {
-                "node": true
-            },
-            "files": [
-                ".eslintrc.{js,cjs}"
-            ],
-            "parserOptions": {
-                "sourceType": "script"
-            }
-        }
-    ],
-    "parser": "@typescript-eslint/parser",
-    "parserOptions": {
-        "ecmaVersion": "latest",
-        "sourceType": "module"
+    parser: "@typescript-eslint/parser",
+    parserOptions: {
+        ecmaVersion: "latest",
+        project: "tsconfig.json",
+        tsconfigRootDir: __dirname,
+        sourceType: "module",
     },
-    "plugins": [
-        "@typescript-eslint"
+    ignorePatterns: [
+        "/dist/**/*",
+        ".eslintrc.js"
     ],
-    "rules": {
-    }
-}
+    plugins: [
+        "@typescript-eslint",
+        "import",
+    ],
+    rules: {
+        quotes: ["error", "double"],
+    },
+};
