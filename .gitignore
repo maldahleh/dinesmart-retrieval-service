@@ -10,6 +10,3 @@ typings/
 
 # Node.js dependency directory
 node_modules/
-
-# Ignore cloud access key
-DineSmart-a5a9a082d13d.json
