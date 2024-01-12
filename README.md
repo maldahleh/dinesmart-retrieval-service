@@ -20,6 +20,7 @@ You can interact with the API using Postman.
 - [Render](https://render.com/)
 - Cloud Firestore
 - Node.js (with TypeScript)
+- [Sentry](https://sentry.io/): Used for error monitoring and profiling
 
 ## Related Projects
 - [dinesmart](https://github.com/maldahleh/dinesmart): iOS Client
