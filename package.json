@@ -3,14 +3,16 @@
   "repository": "https://github.com/maldahleh/dinesmart-retrieval-service",
   "main": "dist/app.js",
   "scripts": {
-    "build": "tsc",
+    "build": "tsc && npm run sentry:sourcemaps",
     "start": "npm run build && node dist/app.js",
-    "lint": "eslint --ext .js,.ts ."
+    "lint": "eslint --ext .js,.ts .",
+    "sentry:sourcemaps": "sentry-cli sourcemaps inject --org maldahleh --project dinesmart-retrieval-service ./dist && sentry-cli sourcemaps upload --org maldahleh --project dinesmart-retrieval-service ./dist"
   },
   "engines": {
     "node": "20"
   },
   "dependencies": {
+    "@sentry/cli": "^2.25.0",
     "@sentry/node": "^7.93.0",
     "@sentry/profiling-node": "^1.3.4",
     "dotenv": "^16.3.1",
