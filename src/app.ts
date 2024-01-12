@@ -2,7 +2,7 @@ import "dotenv/config";
 import express from "express";
 import * as Sentry from "@sentry/node";
 import {loadData, inspectionData} from "./helpers/data-fetcher";
-import {ProfilingIntegration} from "@sentry/profiling-node/lib/types";
+import {ProfilingIntegration} from "@sentry/profiling-node";
 
 const DEFAULT_PORT = 3000;
 const INSPECTIONS_ENDPOINT = "/inspections";
