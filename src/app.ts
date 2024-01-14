@@ -25,7 +25,6 @@ Sentry.init({
 app.use(Sentry.Handlers.requestHandler());
 app.use(Sentry.Handlers.tracingHandler());
 
-console.log(`Private key: ${process.env.FIREBASE_PRIVATE_KEY}`);
 app.get(INSPECTIONS_ENDPOINT, (_req, res) => res.json(inspectionData));
 
 app.use(Sentry.Handlers.errorHandler({
